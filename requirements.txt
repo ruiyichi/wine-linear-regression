@@ -2,6 +2,5 @@ pandas
 matplotlib
 scipy
 statsmodels
-pickle
 numpy
 sklearn
