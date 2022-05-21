@@ -16,7 +16,7 @@ def load_dataset():
 def create_new_sample():
 	df = load_dataset()
 	num_samples = math.floor(len(df)*0.1)
-	return df.sample(n = num_samples)
+	return df.sample(n=num_samples)
 
 def save_sample(sample):
 	with open("sample.p", "wb") as file:
@@ -115,6 +115,7 @@ def print_statistics(linear_regressor, ols_result, X, Y, num_samples):
 	print("Normal: The histogram of the residuals is unimodal and mostly bell-shaped.")
 	print("Equal SD: The residual plot shows similar amounts of scatter for each x.")
 	print("Random: The observations were randomly sampled.")
+	print("")
 
 	print(f"Population size: {len(load_dataset())}")
 	print(f"Sample size (n): {num_samples}")
@@ -124,7 +125,8 @@ def print_statistics(linear_regressor, ols_result, X, Y, num_samples):
 	print(f"Y-intercept: {y_int}")
 	print(f"t-value: {t_value}")
 	print(f"Standard error of slope: {std_error}")
-	print(f"({confidence_interval_lower}, {confidence_interval_upper})")
+	print(f"Confidence interval: ({confidence_interval_lower}, {confidence_interval_upper})")
+	print("")
 
 	print(f"Conclusion: We are {(1-sig_level)*100}% confident that the interval from {confidence_interval_lower} to {confidence_interval_upper} captures the slope of the true regression line relating the {y_axis} y and {x_axis} x of Portuguese Vinho Verde wine.")
 
